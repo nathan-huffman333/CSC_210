@@ -1,0 +1,58 @@
+1.) When given the same graph, starting node, and same goal node, which sorting
+algorithm takes the least amount of time to find the end goal depends on the
+graph. While depth-first search is often quicker than breadth-first search on
+larger graphs because breadth-first search will loop through every possible
+vertex, the result is often not the shortest possbile path to the endgoal, but
+instead the first path to the goal that was discovered. Furthermore, on some
+graphs, the reverse is true, since occasionally depth-first search might go
+down an unnecessarily long path heading away from the goal, which could be
+discovered much quicker using breadth first search by branching out in all
+directions from the start point that depth-first search would not explore until
+much later.
+
+2.) The worst case Big-O runtime of breadth-first search is Big-O(V+E), with V
+representing the number of vertices in the graph, and E representing the number
+of edges. The vertices represent the actual points, or nodes, on the graph,
+consisting of either numbers or names, and the edges represent the relation
+between the nodes and how they are connected. Breadth-first search travels
+through a graph systematically visiting nodes further and further away form the
+starting node by traveling across each edge that connects to each node,
+therefore, the worst possible scenario of breadth-first search would end with
+the every single node and edge exlpored before finally finding the very last
+possible node, that being the goal. So, because Breadth-first search has to go
+through each and every vertex and edge once on the worst case scenario, the
+Big-O would be these to values added together, equaling Big-O(V+E).
+
+3.) An adjacency matrix would be less memory efficient than an adjacency list
+for storing a social graph of friends, especially a big one for a social media
+set like facebook, for a very fundamental reason relating to the overall
+structure of matrices that results in a lot of redundancy. An adjacency matrix
+would represent the relationship of each value with every other value, and if
+properly formatted, would always result in being diagonally symmetrical for an
+undirected graph, with values like first column second row and second column
+first row being exactly the same. Therefore, if we imagine an adjacency matrix
+that represents two friends, one of which who has no other friends but the one,
+and the other has a total of 50 friends, a matrix would not only have to
+specify that the person with only one friend is not friends with all 49 other
+people individually with true/false declarations, but also vice versa, that
+each of the 49 people are not friends with the person with one friend. Such a
+format for a big social media site would mean that essentially, an individual's
+relationship with every single person that has 10, 20, 30 degrees of separation
+would still need to be represented, and for those people's relationship with
+them as well. An adjacency list however, removes all redundancy, representing
+only the things that have a direct relationship between one another, meaning
+one person would represent an index, which would only state the people who they
+are friends with, and are only one degree of separation from. So, adjacency
+lists, by only needing to represent who's friends with who, with a lack of
+connection implied by a name not contained within an index, and not having to
+manually state who is and who isn't friends with who in regards to every person
+on the platform, they are much more memory efficient.
+
+4.) A real life example of depth-first search might include a type of maze or
+traversing something similar, like a corn maze, paper maze, or even a cave.
+This is because, by using depth-first search, if you have an ordered priority
+of movements that you always adhere to, going as far down the first path you
+have available is a valid strategy even if it ends in a dead end, since you
+will always end up back-tracking to a previous decision that leads to a
+different path, and by process of elimination, eventually stumble into the exit
+without getting lost. 

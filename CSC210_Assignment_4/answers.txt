@@ -1,0 +1,49 @@
+1.) The reason why bubble search is so much slower than the other types of sorting is because it constantly switches
+the indexes of two numbers repeatedly for potentially the entire length of the list for only one value to be placed
+in its correct index. Furthermore, because of this "bubbling up" process, moving lower numbers from near the end of
+the list to the start of the list takes incredibly long due to its nature of being essentially blind to all other
+values in the list besides the two indexes currently being observed. Compared to the other searching methods, where
+selection sort only requires one swapping of two numbers to ensure that one value is confirmed to be in the correct
+order, bubble sort will have to loop through the entire list, swapping along the way just to place one value in its
+correct position. Additionally, insertion sort, which is able to take advantage of a smaller array of sorted numbers
+it creates to then know whether or not it should shift any values based on the current maximum value is way faster
+then bubble sort which lacks this sort of complexity of logic that helps speed up sorting.
+
+2.) The reason why a sort method might outperform another even though the two methods share the same Big-O might be
+because of several reasons. One such reason might be because the search method relys on constants, which Big-O ignores,
+so while two sorting methods might have the same Big-O of n^2, one of them might actually by 2*n^2, which would obviously
+decrease performance. Additionally, even if two sorting methods share the same Big-O, Big-O only considers the worst
+case scenario, while the average runtime or best case secenario might vary drastically between the two methods giving
+one a better edge over the other. Finally, another reason why two sorting methods sharing the same Big-O might have
+one outperform the other might simply be because even if they perform the same number of instructions, the instructions
+themselves for one algorithm might be more performance heavy than the instructions for the oppsing algorithm, like the
+constant swapping of bubble sort compared to the constant comparison and only one swap of selection sort.
+
+3.) In order for a custom class in python to be able to have the ability to make use of the types of sorting algorithms
+used in this assignment, an instance of the object must entail a measurable, quantifiable, and likely numeric characteristic
+in its constructor that is always declared when an object is created, and therefore allows for the property of comparability.
+Comparability is the ability for instances to be compared using comparison operators such as <, >, or == with the use of
+functions like __lt__, __gt__, or __eq__ to return a boolean saying whether a value is less than, greater than, or equal
+to another. For example, if a class was created for storing information on different types of cars, while many things would
+vary and wouldn't be comparable, such as the manufacturer of the vehicle or the vehicle's name, something that you could
+use to compare different instances of cars might be the year each of them were released, their average gas mileage, or size
+of their fuel tanks, since all of these values would always be specified for every instance of the class, and would have
+variation between each different iteration. It is important to note that simply because a value is shared between all
+instances of a class object and is numeric, it does not always mean they are comparable in a helpful way. For instance, if
+there was a class that allows for the creation of events that can vary in their schedule of different times, days, months,
+and years, if you wanted to list them as a cohesive timeline, the numeric value of 5 AM would return earlier than 8 AM,
+putting it earlier in the list, even if the event at 8 AM occurred in 1885 and the one at 5 AM was only last week. It is
+for this exact reason that these values must be comparable to one another to allow for sorting objects in a beneficial way.
+
+4.) The reason python's built-in sort is so much more efficient than the sorting methods used in this assignment is for a
+number of reasons. Firstly, and most obviously, is because these methods have terrible Big-O values, and are rarely used
+unless in very specific and constrained circumstances, such as an arduino with an incredibly small amount of memory.
+Having a Big-O of n^2 makes these sorting algorithms completely unusable when dealing with big data sets, which is why
+python only offers one built-in sort command with a Big-O of only n * log n, making it signifigantly more efficient than
+these sorting methods. Therefore, it is this reason that makes it clear that the fundamental structure of the code behind
+the built-in sort method is a simply superior and more efficient way of algorithmically organizing data, able to complete
+what would be a laborious task for the three simple sorting methods in fewer instructions and less time with its less
+demanding and preferable logic. Additionally, because it is a built in command, it would have to be as efficient and optimized
+as possible in order for python to hold any merit as a coding language. Since, if all commands that they provided were slow
+and sub-optimal, but had the potential to be easily rewritten faster within the same language, built-in commands would be
+completely abandoned and unusable for any project that cares even moderately about performance. 

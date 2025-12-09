@@ -1,0 +1,67 @@
+1.) Jarnik's algorithm could be easily re-configured to find the maximum-
+spanning-tree instead of the minimum-spanning-tree by simply ensuring that the
+priority queue module selects the greatest number, instead of the smallest
+number as it does currently. To find the minimum-spanning-tree, the code uses
+the "PriorityQueue" module from "queue," which automatically defaults to
+returning the smallest value within it whenever the get() function is used.
+However, if this property was inversed, selecting the largest value within the
+priority queue, then that would ensure the farthest distance travelled.
+
+2.) The difference between a minimum-spanning-tree and a solution to the
+traveling salesman problem is the fact that a minimum-spanning-tree doesn't
+fully connect together at its ends to form a complete loop where the traveling
+salesman problem does. This small but fundamental change is what makes all the
+difference because it means that every vertex in the graph  must be a examined
+as a potential starting point since its path will always loop back onto itself,
+whereas a minimum-spanning-tree cannot be a loop, therefore, the number of
+possible paths that could theoretically visit every node without retracing
+any steps becomes much more limited and easier to calculate. It's for this
+exact reason that something like Jarnik's algorithm to find the minimum-
+spanning-tree has a big O of only m log(n), while the traveling salesman
+problem has a big O of n!.
+
+3.) +------------+---------+--------+---------+----------+------------+
+    |            | Atlanta | Boston | Detroit | New York | Washington |
+    +------------+---------+--------+---------+----------+------------+
+    | Atlanta    | 0       | -1     | -1      | -1       | 543        |
+    +------------+---------+--------+---------+----------+------------+
+    | Boston     | -1      | 0      | 613     | 190      | -1         |
+    +------------+---------+--------+---------+----------+------------+
+    | Detroit    | -1      | 613    | 0       | 482      | 396        |
+    +------------+---------+--------+---------+----------+------------+
+    | New York   | -1      | 190    | 482     | 0        | -1         |
+    +------------+---------+--------+---------+----------+------------+
+    | Washington | 543     | -1     | 396     | -1       | 0          |
+    +------------+---------+--------+---------+----------+------------+
+
+4.) When a priority queue is used for Jarnik's algorithm, it has a big-O
+runtime of O(m log(n)), with m representing the number of edges, and n
+representing the number of vertices in the tree. However, when a priority queue
+is not used, it means that the edge with the smallest distance isn't being
+selected efficiently, instead requiring a linear search through an array of all
+the distances to every vertex to find the smallest value every time, which ends
+up degrading the big-O runtime to O(m*n). 
+
+5.) Jarnik's algorithm is considered a "greedy" algorithm because it is always
+making the best choice with what limited knowledge it has locally, but might
+not be the optimal path overall, and therefore requires backtracking to correct
+previous mistakes to find the right solution. In other words, Jarnik's
+algorithm doesn't decide what path to start on by looking at where each path
+leads into the future and the weight of future edges to predict obviously wrong
+path solutions like a human might do, but instead, only observes the paths
+currently within the frontier, chooses the one with the lowest weight, and then
+checks if their was a shorter way to get to the index of which this path they
+took lead to, and repeats the process continously.
+
+6.) Another example of an algorithm that is named after someone else, resulting
+in the original discoverer of said algorithm not receiving any credit for their
+discover might be Edmonds' Algorithm. The algorithm is used to find the minimum
+spanning arborescence, aka directed tree, and works very similarly to Jarnik's
+algorithm, except adapted to work for directed trees instead of non-directed
+graphs. However, the algorithm was proposed originally, by Yoeng-Jin Chu and
+Tseng-Hong Liu in 1965, and then later by Jack Edmonds in 1967. As for why
+Edmonds received the credit for the discovery and not oeng-Jin Chu and
+Tseng-Hong Liu, it mainly boils down to the popularity of the media of which
+Edmonds published his work, which was seen as a widely recognized journal,
+followed by becoming more popular in academic circles. Additionally, predjudice
+during the time period likely played a hand in it as well. 

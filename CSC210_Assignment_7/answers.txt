@@ -1,0 +1,80 @@
+By: Nathan Huffman
+
+1.) Three examples of a real world queue might include:
+        A.) A fast food drive-through, where the first to arrive is the first
+        to order, get their food, and leave the line, and whenever a new person
+        arrives, they are added to the very end of the line.
+        
+        B.) Reading a book, since you always read a page that was written, and
+        is ordered, previous to the next one, and after finishing said book,
+        you would likely read the next, and therefore newer book in the series
+        to continue.  
+
+        C.) A funnel for marbles where each marble is added one at a time and
+        falls through into a collection of slides and tubes before putting said
+        marble away and then adding the next, making the first marble the first
+        to be put away, and the last marble the last to be put away. 
+
+All of these tings are example of queues because they follow the "first in,
+first out" structure.
+
+
+2.) Three examples of a real world stack might include:
+        A.) Filling a bus or plane back to front, and then dismissing people
+        from front to back, aka closest to the exit, so that the last on is
+        first to leave, and the first on is last to leave.
+
+        B.) The order of which you pack up and then unpack your things from a
+        box after moving it, with the last item you placed being at the top of
+        the box and first item at the bottom. Therefore since you can only
+        remove said items currently accessable to you, you would start at the
+        top with the last thing you placed in, and finish unpacking with the
+        first thing you placed in.
+
+        C.) Putting on and taking off layers of clothing, since if you put on
+        an undershirt, then shirt, then sweatshirt, then coat, the last thing
+        you put on, that being the coat, is the first you remove, followed by
+        the sweatshirt, shirt, and undershirt.
+
+All of these things are examples of stacks because they follow the "last in,
+first out" structure.
+
+
+3.) No, just because a piece of software passes all of its unit tests, does not
+necessarily mean that it functions correctly. Unit tests, just like the code
+that they are testing, are both programmed by people who can make mistakes,
+and misunderstand code. For example, if I don't understand how a particular
+function works, and I assume it always adds a new item to the end of a list,
+but instead it replaces the last item with the value I want to add, if I only
+test that the last item in the list is the new added value, it will pass
+despite being two different arrays. Furthermore, the effectiveness of a test
+file also depends on how well the coder is able to anticipate every possible
+way a user might interact with the software. So, if a coder makes tests for
+every possible integer that a user could enter and they all pass, but doesn't
+account for a user inputting a string or float, they wouldn't know that the
+software could fundamentally break because they forgot to test for it. Planning
+out every possible way someone might interact with software, especially highly
+complex software, is really difficult, and can lead to problems flying under
+the radar. Additionally, not the test file, but the code itself could be wrong
+by returning the right answers to pass the tests, but getting them using a
+wrong method that would not work in every scenario.
+
+
+4.) A linked list would be preferable than a fixed size array when implementing
+stacks and queues because functions like pop and push involved adding and
+removing values to or from the beginning or end of a list, which is great
+because it aligns perfectly with what linked lists excell at. By having a head
+and tail, as well as values that point to the next value, linked lists give a
+constant time operation for adding new values to the start or end of the list.
+Furthermore, because stacks and queues will only peek at the first or last
+value of an array, and not any of them in the middle, retrieving a value from a
+linked list for a stack or queue also becomes a constant time operation because
+it only needs to know the head or the tail, which it always keeps track of.
+Additionally, it is for this reason of how numbers are viewed and added that
+turns what is usually a hinderance for linked lists, that being their lack of
+random access, into a benefit because stacks and queues fundamentally don't
+require it to function quickly. Therefore, compared to fixed arrays, which are
+designed around having a preferably unchanging list size and require constant
+resizing if they ever exceed their max load factor in excange for having
+random access, providing no use for a stack or queue, such a trade off isn't
+worth it, so linked lists become far superior with their dynamic structure.

@@ -1,0 +1,56 @@
+Name: Nathan Huffman
+
+1. The tightest bound Big-O runtime of the random_int_list() function would be O(n)
+since the loop runs exactly "n" times, with "n" being the value "length" that is
+provided, and will run no more or less times. While the value is not a constant, it
+doesn't increase exponentially, making it a fair trade off in the number of elements
+to operations.
+
+
+2. The tightest bound Big-O runtime of the time_trial() function would be O(n log n)
+due to the use of the .sort() function on the list, required for the proper function
+of the binary search method used later on in the code. While the Big-O runtime of 
+the linear search process would be O(n), and the Big-O runtime of the binary search
+process would be O(log n), both of these are much less complex and costly than the
+.sort() function is.
+
+
+3. In order to sort a list of 10,000 elements, it would cost 12 * 10,000 * log(10,000)
+instructions, which would equal around 1,594,525.5 instructions total before sorting.
+
+The number of instructions that it would take to do one linear search from a list would
+be 5 times the total number of elements it considers, which is 10,000, meaning it takes
+5 * 10,000 instructions, or 50,000.
+
+The number of instructions that it would take in order to accomplish one binary search
+(not counting the sorting of the list) would be 10 * log(10,000) instructions, which
+equals around 132.88.
+
+Therefore, in order for a binary search to use less instructions than a linear search,
+it must make this comparison true:
+        1,594,525.5 + 132.88(x) < 50,000(x)
+
+And in order for both processes to take the same number of instructions, this equation
+must also be true:
+        1,594,525.5 + 132.88(x) = 50,000(x)
+
+Then, we can solve for x.
+        1,594,525.5 + 132.88(x) = 50,000(x)
+                    - 132.88(x) - 132.88(x)
+                    1,594,525.5 = 49,867.12(x)
+                    -----------   ----------
+                     49,867.12    49,867.12
+                              x = 32.975... searches
+
+Finally, knowing it takes around 33 searches to be equal, that means that takes 33 searches
+or more in order to justify the usage of binary search.
+
+
+4. The function time_trial() may return a tuple, but it could have returned multiple things
+instead to accomplish the same goal. Instead of a tuple, a simple list also could have been
+used, it would just have less security than a tuple since it could be updated or changed at
+any time instead of being static. Another option could have been to create a class and object
+with the two values of the average time for each search as different characteristics and return
+that object after assigning the corresponding values. Finally, instead of a tuple, a dictionary
+could be used to assign the different times to a word and return the dictionary itself that
+contains both values.

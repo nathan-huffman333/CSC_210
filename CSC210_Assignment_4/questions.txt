@@ -1,0 +1,11 @@
+Please write your answers in a file called "answers.txt" with your names
+at the top in this repository. Please number each answer.
+
+1. Why is bubble sort slower than selection sort and insertion sort?
+Please explain your answer (succinctly).
+
+2. Why do two sort methods with the same Big-O still differ in performance?
+
+3. What property does a custom class need to have for it to be usable in a list with the three sort methods you implemented? Give a name to the concept and also explain specifically in Python what would need to be implemented. Depending on your background with Python this may require some research.
+
+4. Why is Python's built-in sort so much faster than any of our implementations in this assignment? Is it primarily because it is better optimized, or is it something more fundamental?
